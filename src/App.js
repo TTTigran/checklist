@@ -2,7 +2,6 @@ import React, {useState} from "react";
 import "./App.css";
 
 function App() {
-
     const [doc, setDoc] = useState('');
     const [clote, setClote] = useState('');
     const [hygienic, setHygienic] = useState('')
