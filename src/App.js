@@ -69,33 +69,34 @@ function App() {
 
   return (
       <>
-        <div className="app">
+        <h1>gggggg</h1>
+        {/*<div className="app">*/}
 
-          <button onClick={() => addDocument(doc)}>+ Document</button>
-          <input name="document" onChange={handleChangeDoc}/>
-          <button onClick={() => addClote(clote)}>+ Clote</button>
-          <input name="clote" onChange={handleChangeClots}/>
-          <button onClick={() => addHygienic(hygienic)}>+ Hygienic</button>
-          <input name="hygienic" onChange={handleChangeHygienic}/>
+        {/*  <button onClick={() => addDocument(doc)}>+ Document</button>*/}
+        {/*  <input name="document" onChange={handleChangeDoc}/>*/}
+        {/*  <button onClick={() => addClote(clote)}>+ Clote</button>*/}
+        {/*  <input name="clote" onChange={handleChangeClots}/>*/}
+        {/*  <button onClick={() => addHygienic(hygienic)}>+ Hygienic</button>*/}
+        {/*  <input name="hygienic" onChange={handleChangeHygienic}/>*/}
 
-          <div className="title"><h1>Travel CheckList</h1></div>
-          <div className='sort-items'>
-            {list.map((item, bigIndex) => (
-                <div className="checkList">
-                  <b className='title-category'>{item.tytle}:</b>
-                  <div className="list-container">
-                    {item.data.map((item, index) => (
-                        <div key={index}>
-                          <input value={item} name={`checkbox${bigIndex}`} type="checkbox"
-                                 onChange={handleCheck}/>
-                          <span className={isChecked(item)}>{item}</span>
-                        </div>
-                    ))}
-                  </div>
-                </div>
-            ))}
-          </div>
-        </div>
+        {/*  <div className="title"><h1>Travel CheckList</h1></div>*/}
+        {/*  <div className='sort-items'>*/}
+        {/*    {list.map((item, bigIndex) => (*/}
+        {/*        <div className="checkList">*/}
+        {/*          <b className='title-category'>{item.tytle}:</b>*/}
+        {/*          <div className="list-container">*/}
+        {/*            {item.data.map((item, index) => (*/}
+        {/*                <div key={index}>*/}
+        {/*                  <input value={item} name={`checkbox${bigIndex}`} type="checkbox"*/}
+        {/*                         onChange={handleCheck}/>*/}
+        {/*                  <span className={isChecked(item)}>{item}</span>*/}
+        {/*                </div>*/}
+        {/*            ))}*/}
+        {/*          </div>*/}
+        {/*        </div>*/}
+        {/*    ))}*/}
+        {/*  </div>*/}
+        {/*</div>*/}
       </>
   );
 
