@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import "./App.css";
 
 function App() {
@@ -6,39 +6,45 @@ function App() {
   const [clote, setClote] = useState('');
   const [hygienic, setHygienic] = useState('')
   const [checked, setChecked] = useState([]);
-  const [hygienics] = useState(["A", "B", "C"]);
-  const [documents] = useState(["A1", "B1", "C1", "D1"]);
-  const [clotes ] = useState(["Apple", "Banana", "Tea", "Coffee"]);
-  let data = [
+  const [hygienics, setHygienics] = useState(["A", "B", "C"]);
+  const [documents,setDocuments] = useState(["A1", "B1", "C1", "D1"]);
+  const [clotes,setClotes ] = useState(["Apple", "Banana", "Tea", "Coffee"]);
+  let collection = [
     {
       tytle: "Hygienic",
-      items: hygienics
+      data: hygienics
     },
     {
       tytle: "Document",
-      items: documents
+      data: documents
     },
     {
       tytle: "Clotes",
-      items: clotes
+      data: clotes
     },
   ]
-  const [list, setList] = useState(data);
+  const [list, setList] = useState(collection);
 
 
   const addDocument = (item) => {
-    data[1].items.push(item)
-    setList(data)
+    let a = documents
+    a.push(item);
+    setDocuments(a)
+    setList(collection)
   }
 
   const addClote = (item) => {
-    data[2].items.push(item)
-    setList(data)
+   let a = clotes
+    a.push(item)
+    setClotes(a)
+    setList(collection)
   }
 
   const addHygienic = (item) => {
-    data[0].items.push(item)
-    setList(data)
+    let a = hygienics
+    a.push(item);
+    setHygienics(a)
+    setList(collection)
   }
 
 
@@ -66,37 +72,39 @@ function App() {
 
   var isChecked = (item) =>
       checked.includes(item) ? "checked-item" : "not-checked-item";
-
+  useEffect(()=>{
+    console.log(list)
+  },[list])
   return (
+
       <>
-        <h1>gggggg</h1>
-        {/*<div className="app">*/}
+        <div className="app">
 
-        {/*  <button onClick={() => addDocument(doc)}>+ Document</button>*/}
-        {/*  <input name="document" onChange={handleChangeDoc}/>*/}
-        {/*  <button onClick={() => addClote(clote)}>+ Clote</button>*/}
-        {/*  <input name="clote" onChange={handleChangeClots}/>*/}
-        {/*  <button onClick={() => addHygienic(hygienic)}>+ Hygienic</button>*/}
-        {/*  <input name="hygienic" onChange={handleChangeHygienic}/>*/}
+          <button onClick={() => addDocument(doc)}>+ Document</button>
+          <input name="document" onChange={handleChangeDoc}/>
+          <button onClick={() => addClote(clote)}>+ Clote</button>
+          <input name="clote" onChange={handleChangeClots}/>
+          <button onClick={() => addHygienic(hygienic)}>+ Hygienic</button>
+          <input name="hygienic" onChange={handleChangeHygienic}/>
 
-        {/*  <div className="title"><h1>Travel CheckList</h1></div>*/}
-        {/*  <div className='sort-items'>*/}
-        {/*    {list.map((item, bigIndex) => (*/}
-        {/*        <div className="checkList">*/}
-        {/*          <b className='title-category'>{item.tytle}:</b>*/}
-        {/*          <div className="list-container">*/}
-        {/*            {item.data.map((item, index) => (*/}
-        {/*                <div key={index}>*/}
-        {/*                  <input value={item} name={`checkbox${bigIndex}`} type="checkbox"*/}
-        {/*                         onChange={handleCheck}/>*/}
-        {/*                  <span className={isChecked(item)}>{item}</span>*/}
-        {/*                </div>*/}
-        {/*            ))}*/}
-        {/*          </div>*/}
-        {/*        </div>*/}
-        {/*    ))}*/}
-        {/*  </div>*/}
-        {/*</div>*/}
+          <div className="title"><h1>Travel CheckList</h1></div>
+          <div className='sort-items'>
+            {list && list.map((item, bigIndex) => (
+                <div className="checkList">
+                  <b className='title-category'>{item.tytle}:</b>
+                  <div className="list-container">
+                    {item.data.map((item, index) => (
+                        <div key={index}>
+                          <input value={item} name={`checkbox${bigIndex}`} type="checkbox"
+                                 onChange={handleCheck}/>
+                          <span className={isChecked(item)}>{item}</span>
+                        </div>
+                    ))}
+                  </div>
+                </div>
+            ))}
+          </div>
+        </div>
       </>
   );
 
