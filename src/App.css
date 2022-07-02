@@ -9,8 +9,20 @@
   height: 100vh;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
+.adder-board{
+  display: flex;
+  justify-content: space-between;
+}
+li{
+  color: white;
+}
+h2{
+  font-size: 40px;
+  color: white;
+}
 h1{
-  color: red;
+  font-size: 100px;
+  color: blue;
 }
 .title {
   font-size: 22px;
@@ -49,9 +61,12 @@ h1{
 .checkList{
   border-radius: 20%;
   padding: 10px;
-  background-color: grey;
+  background: lightblue;
   margin-left: 50px;
 }
 .title-category{
   color: brown;
+}
+body{
+  background-image: url("Travel.jpeg");
 }
